@@ -29,7 +29,7 @@
     </style>
   </head>
   <body>
-    <h1>Contacts</h1>
+    <h1>Dania's Contacts</h1>
 <table id="contacts-table">
     <tr id="contacts-head">
         <th>ID</th>
@@ -60,7 +60,7 @@
     </div>
     <div class="button-wrapper">
         <div class="item button">
-            <div class="field"><input type="button" id="contacts-op-discard" value="Discard" /></div>
+            <div class="field"><input type="button" id="contacts-op-clear" value="Clear" /></div>
         </div>
     <div class="item button button-default">
             <div class="field"><input type="submit" id="contacts-op-save" value="Save" /></div>
@@ -75,7 +75,7 @@
 			$table: document.getElementById("contacts-table"),
 			$form: document.getElementById("contacts-form"),
 			$button_save: document.getElementById("contacts-op-save"),
-			$button_discard: document.getElementById("contacts-op-discard"),
+			$button_clear: document.getElementById("contacts-op-clear"),
 
 			init: function() {
 				// initialize storage index
@@ -85,7 +85,7 @@
 
 				// initialize form
 				Contacts.$form.reset();
-				Contacts.$button_discard.addEventListener("click", function(event) {
+				Contacts.$button_clear.addEventListener("click", function(event) {
 					Contacts.$form.reset();
 					Contacts.$form.id_entry.value = 0;
 				}, true);
@@ -194,7 +194,9 @@
 			},
 			tableRemove: function(entry) {
 				Contacts.$table.removeChild(document.getElementById("entry-"+ entry.id));
-			}
+			},
+			
+			
 		};
 		Contacts.init();
     </script>	
